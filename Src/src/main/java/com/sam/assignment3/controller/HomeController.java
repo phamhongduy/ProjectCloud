@@ -13,7 +13,6 @@ import com.sam.assignment3.repository.RoleRepository;
 import com.sam.assignment3.repository.UserRepository;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
 import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

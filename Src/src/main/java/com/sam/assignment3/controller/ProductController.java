@@ -10,11 +10,9 @@ import com.sam.assignment3.entity.Product;
 import com.sam.assignment3.repository.CategoryRepository;
 import com.sam.assignment3.repository.OrderDetailRepository;
 import com.sam.assignment3.repository.ProductRepository;
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
 import javax.servlet.ServletContext;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +21,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 /**

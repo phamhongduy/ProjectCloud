@@ -5,6 +5,7 @@
  */
 package com.sam.assignment3.entity;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "user_roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"ROLE","user_id"})})
-public class Role {
+public class Role implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
