@@ -31,35 +31,36 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/cate")
 public class CategoryController {
+
     @Autowired
     private CategoryRepository categoryRepository;
     @Autowired
     private ProductRepository productRepository;
-    
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
-    public ModelAndView index(@RequestParam (value = "page",required = false)Integer page,
-            @RequestParam (value = "keyword",required = false)String keyword,
-            ModelMap model){
-        if(page==null){
-            page=0;
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public ModelAndView index(@RequestParam(value = "page", required = false) Integer page,
+            @RequestParam(value = "keyword", required = false) String keyword,
+            ModelMap model) {
+        if (page == null) {
+            page = 0;
         }
-        if(page<0){
-            page=0;
+        if (page < 0) {
+            page = 0;
         }
-        if(keyword==null){
-            keyword="";
+        if (keyword == null) {
+            keyword = "";
         }
         Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, "id"));
-        Pageable pageable =new PageRequest(page,2,sort);
-       if(page>=pageable.getPageSize()){
-            page=pageable.getPageSize();
+        Pageable pageable = new PageRequest(page, 2, sort);
+        if (page >= pageable.getPageSize()) {
+            page = pageable.getPageSize();
         }
         model.put("page", page);
         model.put("keyword", keyword);
         List<Category> listCate = categoryRepository.findAndPaging(keyword, pageable);
-        return new ModelAndView("/cate/index","listCate",listCate);
+        return new ModelAndView("/cate/index", "listCate", listCate);
     }
-    
+
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public ModelAndView create() throws SQLException {
         return new ModelAndView("/cate/create", "product", new Category());
@@ -77,7 +78,7 @@ public class CategoryController {
 
     @RequestMapping(value = "/details", method = RequestMethod.GET)
     public ModelAndView details(@RequestParam(value = "id", required = false) int id) throws SQLException {
-        return new ModelAndView("/cate/details", "product",categoryRepository.findOne(id) );
+        return new ModelAndView("/cate/details", "product", categoryRepository.findOne(id));
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
@@ -96,13 +97,14 @@ public class CategoryController {
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public String delete(@RequestParam(value = "id", required = false) int id,ModelMap model) throws SQLException {
+    public String delete(@RequestParam(value = "id", required = false) int id, ModelMap model) throws SQLException {
         if (!productRepository.findByCateId(id).isEmpty()) {
             model.put("listCate", categoryRepository.findAll());
             model.put("error", "Sản phẩm đang được sử dụng");
+            model.addAttribute("error", "Product in use");
             return "redirect:../home/index";
         }
         categoryRepository.delete(id);
-       return "redirect:../home/index";
+        return "redirect:../home/index";
     }
 }

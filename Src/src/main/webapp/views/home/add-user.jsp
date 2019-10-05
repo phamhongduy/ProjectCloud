@@ -21,7 +21,7 @@
 
                     <div class="col-md-5">
                         <div style="color: red">${error}</div>
-                    <form:form action="../add-user" method="POST" modelAttribute="user" enctype="multipart/form-data">
+                    <form:form action="${pageContext.request.contextPath}/add-user" method="POST" modelAttribute="user" enctype="multipart/form-data">
                         <div class="form-group">
                             <label><b>Username</b></label>
                             <form:input type="text" maxlength="50" path="username"

@@ -4,7 +4,6 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
-    <%--<jsp:include page="header.jsp"></jsp:include>--%>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
@@ -12,7 +11,7 @@
                 <a class="navbar-brand" href="#">HM10</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="../index">Home</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/index">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li style="margin-right: 10px">

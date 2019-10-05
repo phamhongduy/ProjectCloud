@@ -24,7 +24,7 @@
                 <input type="submit" style="width: 150px; margin-left: 50px; margin-top: 20px; " class="btn btn-outline-info btn-block" value="Xác Nhận">
 
             </form:form>
-            <a href="../home/index" style="width: 150px; margin-left: 50px; margin-top: 20px; " class="btn btn-outline-info btn-block">Hủy</a>
+                <a href="${pageContext.request.contextPath}/home/index" style="width: 150px; margin-left: 50px; margin-top: 20px; " class="btn btn-outline-info btn-block">Hủy</a>
         </div>
     </body>
 </html>

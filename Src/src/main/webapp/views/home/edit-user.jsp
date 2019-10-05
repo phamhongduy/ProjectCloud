@@ -22,7 +22,7 @@
                     <div class="col-md-5">
                         <div style="color: red">${error}</div>
                     
-                    <form:form method="post" action="../edit-user" modelAttribute="user">
+                    <form:form method="post" action="${pageContext.request.contextPath}/edit-user" modelAttribute="user">
                         <form:hidden path="user_id"/>
                         <form:hidden path="password"/>
                         <form:hidden path="birthdate"/>

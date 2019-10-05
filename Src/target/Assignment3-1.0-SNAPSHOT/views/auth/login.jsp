@@ -31,7 +31,7 @@
                 </table>
             </form>
         </div>
-        <a href="/auth/register">Create New Account !!!</a>
+        <a href="${pageContext.request.contextPath}/auth/register">Create New Account !!!</a>
     </center>   
 </body>
 </html>

@@ -148,6 +148,7 @@ public class ProductController {
         if (!orderDetailRepository.findProductById(id).isEmpty()) {
             model.put("listCate", categoryRepository.findAll());
             model.put("error", "Sản phẩm đang được sử dụng");
+            model.addAttribute("error", "Product in use");
             return "redirect:home/index";
         }
         productRepository.delete(id);

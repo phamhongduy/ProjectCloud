@@ -36,7 +36,7 @@
     <center>
         <h2>Create Account</h2><br/>
         <div style="text-align: center;padding: 30px;border: 1px solid green;width: 400px;">
-            <form:form action="./register" method="POST" modelAttribute="user" enctype="multipart/form-data">
+            <form:form action="${pageContext.request.contextPath}/register" method="POST" modelAttribute="user" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <div style="color: red">${error}</div>

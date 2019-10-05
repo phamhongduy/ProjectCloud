@@ -3,10 +3,10 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="../header.jsp"></jsp:include>
+    <jsp:include page="${pageContext.request.contextPath}/header.jsp"></jsp:include>
 
         <body>
-        <jsp:include page="../nav.jsp"></jsp:include>
+        <jsp:include page="${pageContext.request.contextPath}/nav.jsp"></jsp:include>
             <!-- Page Content -->
             <div class="container">
 

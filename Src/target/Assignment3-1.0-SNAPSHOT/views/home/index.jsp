@@ -5,22 +5,9 @@
 <html>
     <head>
         <title>Home Page</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link href="../resources/css/bootstrap.css" rel="stylesheet"/>
-        <link href="../resources/css/shop-item.css" rel="stylesheet"/>
-        <link href="../resources/css/shop-homepage.css" rel="stylesheet"/>
-        <link href="../resources/css/custom.css" rel="stylesheet"/>
-        <!-- jQuery -->
-        <script src="../resources/js/jquery.js"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../resources/js/bootstrap.min.js"></script>
     </head>
-
-    <body>
+    <jsp:include page="../header.jsp"></jsp:include>
+        <body>
         <jsp:include page="../nav.jsp"></jsp:include>
             <!-- Page Content -->
             <div class="container">
@@ -90,10 +77,10 @@
 
                                                 <h5><c:out value="${row.name}"/></h5>
                                                 <div class="truncate-text demission"><c:out value="${row.description}"/>
-                                                    <h3 style="color: red">${error}</h3></div>
+                                                    <h3 style="color: red">${requestScope.error}</h3></div>
                                                 <input id="id" type="hidden" value="<c:out value="${row.id}"/>"/>
-                                                <a href="../edit?id=${row.id}" class="btn btn-outline-info">Edit</a>
-                                                <a href="../delete?id=${row.id}" class="btn btn-outline-info">Remove</a>
+                                                <a href="${pageContext.request.contextPath}/edit?id=${row.id}" class="btn btn-outline-info">Edit</a>
+                                                <a href="${pageContext.request.contextPath}/delete?id=${row.id}" class="btn btn-outline-info">Remove</a>
                                             </div>
                                         </div>
                                     </div>

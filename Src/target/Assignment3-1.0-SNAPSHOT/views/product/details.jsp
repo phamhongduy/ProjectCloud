@@ -19,13 +19,11 @@
                         <c:forEach items="${listCate}" var="item">
                             <a href="./index?keyword=&id=${item.id}" class="list-group-item">${item.name}</a>
                         </c:forEach>
-                        </div>
                     </div>
-
-                    <div class="col-md-9">
-
-                        <div class="thumbnail">
-                            <img class="img-responsive" src="/image/${product.thumnail}" alt="Preview not available">
+                </div>
+                <div class="col-md-9">
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/image/${product.thumnail}" alt="Preview not available">
                         <div class="caption-full">
                             <h4 class="float-right">${product.price} $</h4>
                             <h4><b>${product.name}</b>
@@ -34,8 +32,8 @@
                             <p>${product.description}</p>
                             <h4>Amount: ${product.amount} </h4>
                             <h4>Category: ${product.category.name} </h4>
-                            <a href="../shop/order?id=${product.id}&quantity=1" class="btn btn-outline-info btn-block">Add to card</a>
-                            <a href="../index" class="btn btn-outline-info btn-block">Return</a>
+                            <a href="${pageContext.request.contextPath}/shop/order?id=${product.id}&quantity=1" class="btn btn-outline-info btn-block">Add to card</a>
+                            <a href="${pageContext.request.contextPath}/index" class="btn btn-outline-info btn-block">Return</a>
                         </div>
 
                     </div>

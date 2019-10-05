@@ -32,7 +32,7 @@
                             <p>${product.description}</p>
                             <h4>Amount: ${product.amount} </h4>
                             <h4>Category: ${product.category.name} </h4>
-                            <a href="../shop/order?id=${product.id}&quantity=1" class="btn btn-outline-info btn-block">Add to card</a>
+                            <a href="${pageContext.request.contextPath}/shop/order?id=${product.id}&quantity=1" class="btn btn-outline-info btn-block">Add to card</a>
                         </div>
 
                     </div>
