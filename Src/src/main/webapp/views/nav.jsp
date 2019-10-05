@@ -4,7 +4,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="header.jsp"></jsp:include>
+    <%--<jsp:include page="header.jsp"></jsp:include>--%>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
@@ -20,14 +20,14 @@
                 </li>
                 <li style="margin-right: 10px">
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
-                    <a href="../home/usermanagement"><span class="glyphicon glyphicon-user"></span>
+                    <a href="${pageContext.request.contextPath}/home/usermanagement"><span class="glyphicon glyphicon-user"></span>
                        Manage User
                     </a>
                 </sec:authorize>
                 </li>
                 <li style="margin-right: 10px">
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
-                    <a href="../home/"><span class="glyphicon glyphicon-user"></span>
+                    <a href="${pageContext.request.contextPath}/home/"><span class="glyphicon glyphicon-user"></span>
                        Admin Page
                     </a>
                 </sec:authorize>
@@ -35,7 +35,7 @@
                 <li style="margin-right: 10px">
                     <sec:authentication var="principal" property="principal"/>
                 <sec:authorize access="isAuthenticated()">
-                    <a href="../shop/history?user=${principal.username}"><span class="glyphicon glyphicon-user"></span>
+                    <a href="${pageContext.request.contextPath}/shop/history?user=${principal.username}"><span class="glyphicon glyphicon-user"></span>
                        History
                     </a>
                 </sec:authorize>
@@ -48,7 +48,7 @@
                     </a>
                 </sec:authorize>
                 <sec:authorize access="!isAuthenticated()">
-                    <a href="../auth/register"><span class="glyphicon glyphicon-user"></span>
+                    <a href="${pageContext.request.contextPath}/auth/register"><span class="glyphicon glyphicon-user"></span>
                         Sign up
                     </a>
                 </sec:authorize>
@@ -61,16 +61,13 @@
                     </a>
                 </sec:authorize>
                 <sec:authorize access="!isAuthenticated()">
-                    <a href="../auth/login"><span class="glyphicon glyphicon-log-in"></span>
+                    <a href="${pageContext.request.contextPath}/auth/login"><span class="glyphicon glyphicon-log-in"></span>
                       Login
                     </a>
                 </sec:authorize>
-                </li>
-                    
-                    
+                </li>         
             </ul>
         </div>
         <!-- /.container -->
     </nav>
-
 </html>

@@ -98,8 +98,8 @@
                                                 <h5><c:out value="${row.name}"/></h5>
                                                 <div class="truncate-text demission"><c:out value="${row.description}"/></div>
                                                 <input id="id" type="hidden" value="<c:out value="${row.id}"/>"/>
-                                                <a href="./details?id=${row.id}">Detail</a>
-                                                <a href="../shop/order?id=${row.id}&quantity=1" class="btn btn-outline-info">Add to card</a>
+                                                <a href="${pageContext.request.contextPath}/details?id=${row.id}">Detail</a>
+                                                <a href="${pageContext.request.contextPath}/shop/order?id=${row.id}&quantity=1" class="btn btn-outline-info">Add to card</a>
                                             </div>
                                         </div>
                                     </div>
